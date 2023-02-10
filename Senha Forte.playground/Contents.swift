@@ -37,11 +37,9 @@ func checkPassword(_ password: String) -> Bool {
         if password.count >= 5 && password.count <= 15 && number.isEmpty == false && isValid(for: password) == true {
             for char in password {
                     if  char >= "a" && char <= "z" {
-                        for char in String(password[index]) {
-                            if char >= "A" && char <= "Z" {
+                            if String(password[index]) >= "A" && String(password[index]) <= "Z" {
                                 return true
                             }
-                        }
                     }
                 }
             }
@@ -52,10 +50,10 @@ func checkPassword(_ password: String) -> Bool {
     return false
 }
 
-let pass1 = "Teste123"
+let pass1 = "Teste1239"
 let pass2 = "TESTE"
-let pass3 = "asd"
-if checkPassword(pass3) {
+let pass3 = "Casa2Sega14"
+if checkPassword(pass1) {
     print("Senha forte")
 }else{
     print("Não atende os requisitos!")
